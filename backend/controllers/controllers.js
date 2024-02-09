@@ -70,7 +70,7 @@ const updateFlashcard = async (req, res) => {
       return res.status(404).json({ success: false, message: "Invalid Id"})
     }
 
-    const flashcard = await Flashcard.findByIdAndUpdate(id, req.body, {
+    const flashcard = await Flashcard.findByIdAndUpdate(id, ...req.body, {
       new: true
     })
 
